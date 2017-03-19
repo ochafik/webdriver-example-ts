@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "build": "tsc && webdriver-manager update",
+    "run": "node build/main.js",
+    "start": "npm run build && concurrently --kill-others \"webdriver-manager start\" \"npm run run\""
+  },
+  "dependencies": {
+    "chromedriver": "^2.27.2",
+    "protractor": "^5.0.0",
+    "typescript": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/selenium-webdriver": "^2.53.39",
+    "concurrently": "^3.1.0",
+    "webdriver-manager": "^12.0.1"
+  }
+}
