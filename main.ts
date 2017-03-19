@@ -12,7 +12,7 @@ let find = driver.findElement;
 
 (async function() {
   await driver.get('https://foo.com');
-  await driver.wait(until.titleIs('Bar'), foreverMillis);
+  // await driver.wait(until.titleIs('Bar'), foreverMillis);
 
   const pwd = await (await find(By.id('password')));
   await pwd.sendKeys('blah');

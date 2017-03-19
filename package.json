@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "tsc && webdriver-manager update",
-    "run": "node build/main.js",
+    "run": "await tcp localhost:4444 && export SELENIUM_BROWSER=chrome && export SELENIUM_REMOTE_URL=\"http://localhost:4444/wd/hub\" && node build/main.js",
     "start": "npm run build && concurrently --kill-others \"webdriver-manager start\" \"npm run run\""
   },
   "dependencies": {
@@ -12,6 +12,7 @@
   "devDependencies": {
     "@types/selenium-webdriver": "^2.53.39",
     "concurrently": "^3.1.0",
+    "wait-cli": "^0.5.0",
     "webdriver-manager": "^12.0.1"
   }
 }
